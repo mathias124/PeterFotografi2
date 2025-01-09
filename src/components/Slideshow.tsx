@@ -15,11 +15,9 @@ const images = {
     '/culture2.jpg',
     '/culture4.jpg',
     '/culture3.jpg',
-    '/culture1.jpg',
     '/japan1.jpg',
     '/japan2.jpg',
     '/japan3.jpg',
-    '/japan4.jpg',
     '/japan5.jpg',
   ],
   portrait: [
@@ -30,44 +28,52 @@ const images = {
 
 const Slideshow: React.FC<SlideshowProps> = ({ category }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  const categoryImages = images[category as keyof typeof images] || [];
 
   // Automatically change the image every 4 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => {
-        const categoryImages = images[category as keyof typeof images] || [];
-        return (prevIndex + 1) % categoryImages.length;
-      });
+      setIsAnimating(true);
+      setTimeout(() => {
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % categoryImages.length);
+        setIsAnimating(false);
+      }, 500); // Animation duration matches the CSS
     }, 4000);
 
     return () => clearInterval(interval);
-  }, [category]);
+  }, [category, categoryImages.length]);
 
   // Reset to the first image when the category changes
   useEffect(() => {
     setCurrentImageIndex(0);
   }, [category]);
 
-  const categoryImages = images[category as keyof typeof images] || [];
-  const currentImage = categoryImages[currentImageIndex] || '';
-
-  if (!currentImage) {
-    return null;
-  }
-
-  // Handle dot navigation
   const handleDotClick = (index: number) => {
-    setCurrentImageIndex(index);
+    setIsAnimating(true);
+    setTimeout(() => {
+      setCurrentImageIndex(index);
+      setIsAnimating(false);
+    }, 500); // Animation duration matches the CSS
   };
 
   return (
     <div className="slideshow">
-      <img
-        src={currentImage}
-        alt={`${category} ${currentImageIndex + 1}`}
-        className="slideshow-image"
-      />
-      <div className="overlay" />
+      {/* Sliding container for images */}
+      <div
+        className={`slideshow-images ${isAnimating ? 'sliding' : ''}`}
+        style={{ transform: `translateX(-${currentImageIndex * 100}%)` }}
+      >
+        {categoryImages.map((image, index) => (
+          <img
+            key={index}
+            src={image}
+            alt={`${category} ${index + 1}`}
+            className="slideshow-image"
+          />
+        ))}
+      </div>
 
       {/* Dots for navigation */}
       <div className="slideshow-dots">

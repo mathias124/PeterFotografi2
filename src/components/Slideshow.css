@@ -4,26 +4,21 @@
   left: 0;
   width: 100%;
   height: 100vh;
+  overflow: hidden; /* Hide images outside the view */
   z-index: 1;
 }
 
+.slideshow-images {
+  display: flex;
+  transition: transform 0.5s ease-in-out; /* Smooth slide animation */
+}
+
 .slideshow-image {
-  width: 100%;
+  min-width: 100%; /* Ensure each image takes up the full width of the viewport */
   height: 100%;
   object-fit: cover;
-  transition: opacity 1s ease-in-out;
 }
 
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.2);
-}
-
-/* Dot navigation */
 .slideshow-dots {
   position: absolute;
   bottom: 20px;
