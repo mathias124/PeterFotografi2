@@ -1,0 +1,22 @@
+.tab-selection {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.tab {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab:hover,
+.tab.active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
