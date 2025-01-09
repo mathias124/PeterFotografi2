@@ -1,66 +1,61 @@
-import { forwardRef } from 'react';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
+import React from 'react';
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaFacebookF } from 'react-icons/fa';
 import './Contact.css';
 
-const Contact = forwardRef<HTMLDivElement>((_props, ref) => {
+const Contact: React.FC = () => {
   return (
-    <div ref={ref} className="contact-page">
+    <div className="contact-page">
       <div className="contact-content">
-        <h2>Get in Touch</h2>
         <div className="contact-grid">
+          {/* Photographer Info Section */}
           <div className="photographer-info">
             <div className="photographer-header">
               <img
-                src="/placeholder.svg?height=150&width=150"
+                src="/profile%20picture.jpg?height=591&width=591"
                 alt="Photographer"
                 className="photographer-image"
               />
               <div className="photographer-name">
-                <h3>John Doe</h3>
+                <h3>Peter Schrader</h3>
                 <p>Professional Photographer</p>
               </div>
             </div>
             <p className="photographer-bio">
-              With over 10 years of experience, I specialize in capturing life's most precious moments. Let's create something beautiful together!
+              With over 10 years of experience, through various locations such as NY, Japan, San Francisco, Copenhagen, I specialize in capturing life's most precious moments in nature, culture, and portraits. Let's work together to bring your vision to life!
             </p>
+
+            {/* Contact Info Section */}
+            <h2 className="section-title">Let's Get in Touch</h2>
             <div className="contact-info">
               <div className="contact-item">
                 <FaEnvelope />
-                <p>john.doe@example.com</p>
+                <p>ps@photo.com</p>
               </div>
               <div className="contact-item">
                 <FaPhone />
-                <p>+1 (123) 456-7890</p>
+                <p>+45 40 18 80 15</p>
               </div>
               <div className="contact-item">
                 <FaMapMarkerAlt />
-                <p>123 Photography Street, City, Country</p>
+                <p>Copenhagen, Denmark</p>
               </div>
             </div>
-          </div>
-          <div className="contact-form-container">
-            <form className="contact-form">
-              <input type="text" placeholder="Your Name" />
-              <input type="email" placeholder="Your Email" />
-              <textarea placeholder="Your Message" rows={4}></textarea>
-              <button type="submit">Send Message</button>
-            </form>
+
+            {/* Social Media Section */}
+            <h2 className="section-title">Social Media</h2>
             <div className="social-links">
-              <a href="#" className="social-icon">
+              <a href="https://www.facebook.com/peter.c.schrader" className="social-icon">
                 <FaFacebookF />
-              </a>
-              <a href="#" className="social-icon">
-                <FaInstagram />
-              </a>
-              <a href="#" className="social-icon">
-                <FaTwitter />
               </a>
             </div>
           </div>
+
+          {/* Contact Form Section */}
+
         </div>
       </div>
     </div>
   );
-});
+};
 
 export default Contact;

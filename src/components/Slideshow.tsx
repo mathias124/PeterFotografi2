@@ -12,10 +12,10 @@ const images = {
     '/nature3.jpg',
   ],
   culture: [
-    '/culture1.jpg',
     '/culture2.jpg',
-    '/culture3.jpg',
     '/culture4.jpg',
+    '/culture3.jpg',
+    '/culture1.jpg',
     '/japan1.jpg',
     '/japan2.jpg',
     '/japan3.jpg',
@@ -23,9 +23,9 @@ const images = {
     '/japan5.jpg',
   ],
   portrait: [
-    '/placeholder.svg?height=1080&width=1920&text=Portrait+1',
-    '/placeholder.svg?height=1080&width=1920&text=Portrait+2',
-    '/placeholder.svg?height=1080&width=1920&text=Portrait+3',
+    '/portrait2.jpg?',
+    '/portrait1.jpg?',
+
   ],
 };
 
