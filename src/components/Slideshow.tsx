@@ -23,15 +23,15 @@ const images = {
     '/japan5.jpg',
   ],
   portrait: [
-    '/portrait2.jpg?',
-    '/portrait1.jpg?',
-
+    '/portrait2.jpg',
+    '/portrait1.jpg',
   ],
 };
 
 const Slideshow: React.FC<SlideshowProps> = ({ category }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+  // Automatically change the image every 4 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => {
@@ -43,6 +43,7 @@ const Slideshow: React.FC<SlideshowProps> = ({ category }) => {
     return () => clearInterval(interval);
   }, [category]);
 
+  // Reset to the first image when the category changes
   useEffect(() => {
     setCurrentImageIndex(0);
   }, [category]);
@@ -54,6 +55,11 @@ const Slideshow: React.FC<SlideshowProps> = ({ category }) => {
     return null;
   }
 
+  // Handle dot navigation
+  const handleDotClick = (index: number) => {
+    setCurrentImageIndex(index);
+  };
+
   return (
     <div className="slideshow">
       <img
@@ -62,9 +68,19 @@ const Slideshow: React.FC<SlideshowProps> = ({ category }) => {
         className="slideshow-image"
       />
       <div className="overlay" />
+
+      {/* Dots for navigation */}
+      <div className="slideshow-dots">
+        {categoryImages.map((_, index) => (
+          <div
+            key={index}
+            className={`dot ${index === currentImageIndex ? 'active' : ''}`}
+            onClick={() => handleDotClick(index)}
+          />
+        ))}
+      </div>
     </div>
   );
 };
 
 export default Slideshow;
-
