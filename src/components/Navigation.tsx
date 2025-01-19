@@ -7,7 +7,7 @@ interface NavigationProps {
 }
 
 const Navigation: React.FC<NavigationProps> = ({ selectedTab, onTabChange }) => {
-  const tabs = ['nature', 'culture', 'portrait', 'contact'];
+  const tabs = ['Cities / Countries' ,'Black & White','Nature & Landscape', 'Street Life', 'concert','something else', 'contact'];
 
   return (
     <nav className="navigation">

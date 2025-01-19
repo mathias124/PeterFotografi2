@@ -5,13 +5,30 @@ interface SlideshowProps {
   category: string;
 }
 
+
+
+
 const images = {
-  nature: [
+"Cities / Countries": [
+    '/nature1.jpg',
+
+  ],
+
+  "Black & White": [
+    '/nature1.jpg',
+
+  ],
+  "something else": [
+    '/nature1.jpg',
+
+  ],
+
+  "Nature & Landscape": [
     '/nature1.jpg',
     '/nature2.jpg',
     '/nature3.jpg',
   ],
-  culture: [
+  "Street Life": [
     '/culture2.jpg',
     '/culture4.jpg',
     '/culture3.jpg',
@@ -20,7 +37,7 @@ const images = {
     '/japan3.jpg',
     '/japan5.jpg',
   ],
-  portrait: [
+  concert: [
     '/portrait2.jpg',
     '/portrait1.jpg',
   ],

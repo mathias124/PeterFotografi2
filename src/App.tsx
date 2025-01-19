@@ -6,7 +6,7 @@ import TabSelection from './components/TabSelection';
 import './App.css';
 
 const App: React.FC = () => {
-  const [selectedTab, setSelectedTab] = useState<string>('nature');
+  const [selectedTab, setSelectedTab] = useState<string>('Street Life');
   const [showContact, setShowContact] = useState<boolean>(false);
 
   const handleTabChange = (tab: string) => {

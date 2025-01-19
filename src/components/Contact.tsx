@@ -21,7 +21,8 @@ const Contact: React.FC = () => {
               </div>
             </div>
             <p className="photographer-bio">
-              With over 10 years of experience, through various locations such as NY, Japan, San Francisco, Copenhagen, I specialize in capturing life's most precious moments in nature, culture, and portraits. Let's work together to bring your vision to life!
+              With over 35 years of experience, visiting many various locations throughout the world, mostly Europe, far-east and United States. I started out learning taking pictures at the age of 10 and a little later I progressed by learning to take pictures in studio and at the same time learning the process in the dark room, with black & white and color development. At the age of 20, I started at a apprenticeship as advertising photographer in Paris and in my spare time learned theater photography.
+
             </p>
 
             {/* Contact Info Section */}
@@ -29,7 +30,7 @@ const Contact: React.FC = () => {
             <div className="contact-info">
               <div className="contact-item">
                 <FaEnvelope />
-                <p>ps@photo.com</p>
+                <p>pschrader65@gmail.com</p>
               </div>
               <div className="contact-item">
                 <FaPhone />
