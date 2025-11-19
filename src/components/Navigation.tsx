@@ -10,7 +10,7 @@ const Navigation: React.FC<NavigationProps> = ({ selectedTab, onTabChange }) => 
   const tabs = [
     {
       label: 'Cities / Countries',
-      subcategories: ['Bangkok', 'France'], // Subcategories for the dropdown
+      subcategories: ['bangkok', 'france'], // Subcategories for the dropdown
     },
     { label: 'Black & White' },
     { label: 'Nature & Landscape' },
